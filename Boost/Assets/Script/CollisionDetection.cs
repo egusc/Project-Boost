@@ -10,16 +10,23 @@ public class CollsionDetection : MonoBehaviour
     [SerializeField] float levelLoadDelay = 1f;
     [SerializeField] AudioClip crashAudio;
     [SerializeField] AudioClip victoryAudio;
+    [SerializeField] ParticleSystem crashParticles;
+    [SerializeField] ParticleSystem victoryParticles;
 
     AudioSource audio;
     bool isTransitioning = false;
+    bool collisionEnabled = true;
 
     private void Start() {
         audio = GetComponent<AudioSource>();
     }
 
+    private void Update() {
+        CheckCheatCode();
+    }
+
     private void OnCollisionEnter(Collision other) {
-        if(isTransitioning) { return; };
+        if(isTransitioning || !collisionEnabled) { return; };
             switch(other.gameObject.tag)
             {
                 case "Friendly":
@@ -30,8 +37,9 @@ public class CollsionDetection : MonoBehaviour
                     break;
 
                 default:
-                    StartCrashSequence();
-                    break;
+                        StartCrashSequence();
+                    
+                   break;
             }
     }
 
@@ -39,6 +47,7 @@ public class CollsionDetection : MonoBehaviour
     {
         isTransitioning = true;
         audio.Stop();
+        crashParticles.Play();
         //TODO Add sound effect and particle effect on crash
         GetComponent<Movement>().enabled = false;
         if(!audio.isPlaying)
@@ -53,6 +62,7 @@ public class CollsionDetection : MonoBehaviour
     {
         isTransitioning = true;
         audio.Stop();
+        victoryParticles.Play();
         //TODO Add sound effect and particle effect on crash
         GetComponent<Movement>().enabled = false;
         if(!audio.isPlaying)
@@ -78,6 +88,18 @@ public class CollsionDetection : MonoBehaviour
             nextSceneIndex = 0;
         }
         SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    void CheckCheatCode()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            NextLevel();
+        }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            collisionEnabled = !collisionEnabled;
+        }
     }
 
 }
