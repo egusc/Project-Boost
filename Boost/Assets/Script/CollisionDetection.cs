@@ -66,6 +66,7 @@ public class CollsionDetection : MonoBehaviour
         audio.Stop();
         victoryParticles.Play();
         //TODO Add sound effect and particle effect on crash
+        GetComponent<Movement>().StopParticles();
         GetComponent<Movement>().enabled = false;
         if(!audio.isPlaying)
         {

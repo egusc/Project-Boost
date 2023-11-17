@@ -10,8 +10,26 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Fly Under.unity
-    guid: 04bfe75b1ed8a834d91612540071535d
+    guid: ba2b8a62e5e6ed845880cbe1c79fa524
+  - enabled: 1
+    path: Assets/Scenes/Over and Under.unity
+    guid: e9f1718c1944e8945934f8b2e426efc1
+  - enabled: 1
+    path: Assets/Scenes/Heavy Load.unity
+    guid: db8ac035866ebea4a9bf2df705f4abb7
+  - enabled: 1
+    path: Assets/Scenes/Free Fallin.unity
+    guid: ceb23065170e3594197b6e823c5b9870
+  - enabled: 1
+    path: Assets/Scenes/Moving Obstacle.unity
+    guid: 4978d0f84c7b8ed4d96fe29ec05f559c
   - enabled: 1
     path: Assets/Scenes/Moving and Swerving.unity
     guid: 502f585ea855f094f91d3e5a873d7f2f
+  - enabled: 1
+    path: Assets/Scenes/Moving the Goalposts.unity
+    guid: ce54d6c956e085f4c8deccebb5e7d05b
+  - enabled: 1
+    path: Assets/Scenes/Trust Fall.unity
+    guid: 244fd59948b0381469dcc0e2906abcc2
   m_configObjects: {}
