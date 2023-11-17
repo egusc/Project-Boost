@@ -112,5 +112,11 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = false; //unfreezing roation so physics system can take over
     }
 
+    public void StopParticles()
+    {
+        leftThrusterParticles.Stop();
+        rightThrusterParticles.Stop();
+        mainThrusterParticles.Stop();
+    }
     
 }

@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 7041439807632918977}
   - component: {fileID: 3088358229369428296}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Red Spooky Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
